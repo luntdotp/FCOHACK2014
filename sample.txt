@@ -15,7 +15,7 @@
 	},
 	
 	"uncertain": {
-		"IPSVisitors": 0;
+		"IPSVisitors": 0,
 		"drugArrestsPercent": 0,
 		"totalArrestsPercent": 0,
 		"totalDeathsPercent": 0,
