@@ -1,50 +1,134 @@
 <html>
-	<head>
-		<link rel="stylesheet" href="jquerymobile.css">
-	        <script src="jquery.js"></script>
-	        <script src='jquerymobile.js'></script>
-	</head>
-	<body>
-		<div data-role='page'>
-			<div data-role='header'>
-				<div class='ui-grid-a'>
-					<div class='ui-block-a'>
-						<a data-role='button'>Tinata</a>
-						<a data-role='button'>Country Name - </a>
-					</div>
-					<div class='ui-block-b'>
-						<form id='input'>
-  <input id="pre-rendered-filterable" data-type="search">
-</form>
-<div
-  class="ui-controlgroup ui-controlgroup-vertical ui-corner-all"
-  data-role="controlgroup"
-  data-filter="true"
-  data-input="#pre-rendered-filterable"
-  data-filter-reveal="true"
-  data-enhanced="true">
-  <div class="ui-controlgroup-controls" id='options'>
-    <a href="index.html" class="ui-screen-hidden" data-role="button">General</a>
-    <a href="settings.html" class="ui-screen-hidden" data-role="button">Settings</a>
-    <a href="advanced.html" class="ui-screen-hidden" data-role="button">Advanced</a>
-    <a href="notifications.html" class="ui-screen-hidden" data-role="button">Notifications</a>
-  </div>
-</div> 
-					</div>
-				</div>
-			</div>
-			<div data-role='content'>
-
-			</div>
-		</div>
-	</body>
-	<style>
-	#input{
-		margin-right:5%;
-	}
-</style>
-	<script>
-		$('#input').focusout(function(){$('#options').hide()});
-		$('#input').focusin(function(){$('#options').show()});
-	</script>
+  <head>
+    <link rel="stylesheet" href="jquerymobile.css">
+    <script src="jquery.js"></script>
+    <script src='jquerymobile.js'></script>
+  </head>
+  <body>
+    <div data-role='page'>
+      <div data-role='header'>
+        <div class='ui-grid-a'>
+          <div class='ui-block-a'>
+            <a data-role='button'>Tinata</a>
+            <a data-role='button'>Country Name - </a>
+          </div>
+          <div class='ui-block-b'>
+            <form>
+              <input id="pre-rendered-filterable" data-type="search">
+            </form>
+            <div
+              class="ui-controlgroup ui-controlgroup-vertical ui-corner-all"
+              data-role="controlgroup"
+              data-filter="true"
+              data-input="#pre-rendered-filterable"
+              data-filter-reveal="true"
+              data-enhanced="true">
+              <div class="ui-controlgroup-controls" id='options'>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='content' data-role='content'>
+        
+        <div data-role="controlgroup">
+          <a class="ui-btn ui-corner-all">Country Name: <span id='countryName'/></a>
+          <a class="ui-btn ui-corner-all">Demonym: <span id='demonym' /></a>
+        </div>
+        
+        <div data-role="collapsible-set">
+          
+          <div data-role="collapsible" data-collapsed="false">
+            <h3>Information</h3>
+            <p>
+              <strong>Drug Arrests: </strong><span id='drugArrests'></span><br />
+              <strong>Hospitalisations: </strong><span id='hospitalisations'></span><br />
+              <strong>Number of visiters (2012): </strong><span id='novisiters2012'></span><br />
+              <strong>Lost/Stolen Passports: </strong><span id='passportloss'></span><br />
+              <strong>Total Assistance Requests (Consulate): </strong><span id='totalAssistance'></span><br />
+              <strong>Cases of Rape: </strong><span id='rape'></span><br />
+              <strong>Cases of Sexual Assault: </strong><span id='sexualAssault'></span><br />
+              <strong>Total Death: </strong><span id='totalDeaths'></span><br />
+            </p>
+          </div>
+          
+          <div data-role="collapsible">
+            <h3>Warnings</h3>
+            <p>I'm the collapsibleset content for section 2.</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+    #input{
+      margin-right:5%;
+    }
+  </style>
+  <script>
+    var data = [
+      {
+        'certain':{
+          'countryName': 'United States',
+          'iso': 'us',
+          'demonym': 'American',
+          'drugArrests': 143,
+          'totalArrests': 1120,
+          'totalDeaths': 153,
+          'hospitalisations': 140,
+          'rape': '<5',
+          'sexualAssault': '<5',
+          'otherAssistance': 131,
+          'totalAssistance': 1544,
+          'passportloss':1539,
+          'novisiters2012':3011377
+        },
+        
+        'uncertain': {
+          
+        }
+      },
+      
+      {
+        'certain':{
+          'countryName': 'Spain',
+          'demonym': 'American',
+          'drugArrests': 143,
+          'totalArrests': 1120,
+          'totalDeaths': 153,
+          'hospitalisations': 140,
+          'rape': '<5',
+          'sexualAssault': '<5',
+          'otherAssistance': 131,
+          'totalAssistance': 1544,
+          'passportloss':1539,
+          'novisiters2012':3011377
+        },
+        
+        'uncertain': {
+          
+        }
+      }
+    ]
+    
+    $(data).map(function(index){$('<a>').addClass('ui-screen-hidden country').appendTo($('#options')).text(this.certain.countryName).attr({'data-role':'button','index':index}).click(function(){
+      
+      console.log(data[$(this).attr('index')])
+      $('#countryName').text(data[$(this).attr('index')].certain.countryName);
+      $('#demonym').text(data[$(this).attr('index')].certain.demonym);
+      $('#drugArrests').text(data[$(this).attr('index')].certain.drugArrests);
+      $('#hospitalisations').text(data[$(this).attr('index')].certain.hospitalisations);
+      $('#passportloss').text(data[$(this).attr('index')].certain.passportloss);
+      $('#totalAssistance').text(data[$(this).attr('index')].certain.totalAssistance);
+      $('#rape').text(data[$(this).attr('index')].certain.rape);
+      $('#sexualAssault').text(data[$(this).attr('index')].certain.sexualAssault);
+      $('#totalDeaths').text(data[$(this).attr('index')].certain.totalDeaths);
+      $('#novisiters2012').text(data[$(this).attr('index')].certain.novisiters2012);
+    })});
+    
+    //$('#input').focusout(function(){$('#options').hide()});
+    //$('#input').focusin(function(){$('#options').show()});
+  </script>
 </html>
+
