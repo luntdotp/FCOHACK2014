@@ -1,32 +1,53 @@
 {
-	"certain": {
-		"countryName": 0,
-		"demonym": 0,
-		"drugArrests": 0,
-		"totalArrests": 0,
-		"totalDeaths": 0,
-		"hospitalisations": 0,
-		"rape": 0,
-		"sexualAssault": 0,
-		"therAssistance": 0,
-		"totalAssistance": 0,
-		"passportloss": 0,
-		"novisiters2012": 0
-	},
-	
-	"uncertain": {
-		"britishResidents": 0,
-		"IPSVisitors": 0,
-		"drugArrestsPercent": 0,
-		"totalArrestsPercent": 0,
-		"totalDeathsPercent": 0,
-		"hospitalisationsPercent": 0,
-		"rapePercent": 0,
-		"sexualAssultPercent": 0,
-		"otherAssistancePercent": 0,
-		"totalAssistancePercent": 0,
-		"passportlossPercent": 0,
-		"LGBTRisk": "Low Risk",
-		"warnings": []
-	}
-}
+        'countryName': 'Spain',
+        'demonym': 0,
+        'drugArrests': '10 Low',
+        'totalArrests': 0,
+        'totalDeaths': 0,
+        'hospitalisations': 0,
+        'rape': 0,
+        'sexualAssault': 0,
+        'therAssistance': 0,
+        'totalAssistance': 0,
+        'passportloss': 0,
+        'novisiters2012': 0,
+        'warnings': '',
+        'healthAdvice': '',
+        
+        'percentages': {
+          'drugArrests':10,
+          'totalArrests':10,
+          'deaths':10,
+          'hospitalisation':10,
+          'rape':10,
+          'sexualAssault':10,
+          'otherAssistance':40
+        }
+      },
+      
+      {
+        'countryName': 'Spain',
+        'demonym': 0,
+        'drugArrests': '10 Low',
+        'totalArrests': 0,
+        'totalDeaths': 0,
+        'hospitalisations': 0,
+        'rape': 0,
+        'sexualAssault': 0,
+        'therAssistance': 0,
+        'totalAssistance': 0,
+        'passportloss': 0,
+        'novisiters2012': 0,
+        'warnings': '',
+        'healthAdvice': '',
+        
+        'percentages': {
+          'drugArrests':10,
+          'totalArrests':10,
+          'deaths':10,
+          'hospitalisation':10,
+          'rape':10,
+          'sexualAssault':10,
+          'otherAssistance':40
+        }
+      }

@@ -1,8 +1,8 @@
 <html>
   <head>
-    <link rel="stylesheet" href="jquerymobile.css">
-    <script src="jquery.js"></script>
-    <script src='jquerymobile.js'></script>
+    <link rel="stylesheet" href="http:////code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css">
+    <script src="http:////code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src='http:////code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js'></script>
   </head>
   <body>
     <div data-role='page'>
@@ -32,8 +32,8 @@
       <div id='content' data-role='content'>
         
         <div data-role="controlgroup">
-          <a class="ui-btn ui-corner-all">Country Name: <span id='countryName'/></a>
-          <a class="ui-btn ui-corner-all">Demonym: <span id='demonym' /></a>
+          <a class="ui-btn ui-corner-all">Country Name: <span id='countryName'></span></a>
+          <a class="ui-btn ui-corner-all">Demonym: <span id='demonym'></span></a>
         </div>
         
         <div data-role="collapsible-set">
@@ -69,52 +69,65 @@
   <script>
     var data = [
       {
-        'certain':{
-          'countryName': 'United States',
-          'iso': 'us',
-          'demonym': 'American',
-          'drugArrests': 143,
-          'totalArrests': 1120,
-          'totalDeaths': 153,
-          'hospitalisations': 140,
-          'rape': '<5',
-          'sexualAssault': '<5',
-          'otherAssistance': 131,
-          'totalAssistance': 1544,
-          'passportloss':1539,
-          'novisiters2012':3011377
-        },
+        'countryName': 'Spain',
+        'demonym': 0,
+        'drugArrests': '10 Low',
+        'totalArrests': 0,
+        'totalDeaths': 0,
+        'hospitalisations': 0,
+        'rape': 0,
+        'sexualAssault': 0,
+        'therAssistance': 0,
+        'totalAssistance': 0,
+        'passportloss': 0,
+        'novisiters2012': 0,
+        'warnings': '',
+        'healthAdvice': '',
         
-        'uncertain': {
-          
+        'percentages': {
+          'drugArrests':10,
+          'totalArrests':10,
+          'deaths':10,
+          'hospitalisation':10,
+          'rape':10,
+          'sexualAssault':10,
+          'otherAssistance':40
         }
       },
       
       {
-        'certain':{
-          'countryName': 'Spain',
-          'demonym': 'American',
-          'drugArrests': 143,
-          'totalArrests': 1120,
-          'totalDeaths': 153,
-          'hospitalisations': 140,
-          'rape': '<5',
-          'sexualAssault': '<5',
-          'otherAssistance': 131,
-          'totalAssistance': 1544,
-          'passportloss':1539,
-          'novisiters2012':3011377
-        },
+        'countryName': 'Spain',
+        'demonym': 0,
+        'drugArrests': '10 Low',
+        'totalArrests': 0,
+        'totalDeaths': 0,
+        'hospitalisations': 0,
+        'rape': 0,
+        'sexualAssault': 0,
+        'therAssistance': 0,
+        'totalAssistance': 0,
+        'passportloss': 0,
+        'novisiters2012': 0,
+        'warnings': '',
+        'healthAdvice': '',
         
-        'uncertain': {
-          
+        'percentages': {
+          'drugArrests':10,
+          'totalArrests':10,
+          'deaths':10,
+          'hospitalisation':10,
+          'rape':10,
+          'sexualAssault':10,
+          'otherAssistance':40
         }
       }
+      
+      
     ]
     
     $(data).map(function(index){$('<a>').addClass('ui-screen-hidden country').appendTo($('#options')).text(this.certain.countryName).attr({'data-role':'button','index':index}).click(function(){
       
-      console.log(data[$(this).attr('index')])
+      console.log(data[$(this).attr('index')]);
       $('#countryName').text(data[$(this).attr('index')].certain.countryName);
       $('#demonym').text(data[$(this).attr('index')].certain.demonym);
       $('#drugArrests').text(data[$(this).attr('index')].certain.drugArrests);
