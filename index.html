@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="jquerymobile.css">
+	        <script src="jquery.js"></script>
+	        <script src='jquerymobile.js'></script>
+	</head>
+	<body>
+		<div data-role='page'>
+			<div data-role='header'>
+				<div class='ui-grid-a'>
+					<div class='ui-block-a'>
+						<a data-role='button'>Tinata</a>
+						<a data-role='button'>Country Name - </a>
+					</div>
+					<div class='ui-block-b'>
+						<form id='input'>
+  <input id="pre-rendered-filterable" data-type="search">
+</form>
+<div
+  class="ui-controlgroup ui-controlgroup-vertical ui-corner-all"
+  data-role="controlgroup"
+  data-filter="true"
+  data-input="#pre-rendered-filterable"
+  data-filter-reveal="true"
+  data-enhanced="true">
+  <div class="ui-controlgroup-controls" id='options'>
+    <a href="index.html" class="ui-screen-hidden" data-role="button">General</a>
+    <a href="settings.html" class="ui-screen-hidden" data-role="button">Settings</a>
+    <a href="advanced.html" class="ui-screen-hidden" data-role="button">Advanced</a>
+    <a href="notifications.html" class="ui-screen-hidden" data-role="button">Notifications</a>
+  </div>
+</div> 
+					</div>
+				</div>
+			</div>
+			<div data-role='content'>
+
+			</div>
+		</div>
+	</body>
+	<style>
+	#input{
+		margin-right:5%;
+	}
+</style>
+	<script>
+		$('#input').focusout(function(){$('#options').hide()});
+		$('#input').focusin(function(){$('#options').show()});
+	</script>
+</html>
