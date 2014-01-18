@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="jquerymobile.css">
+<script src="jquery.js"></script>
+<script src='jquerymobile.js'></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div id="data">
+
+<h1><span id="countryName"></h1>
+Official Country Name: <span id="countryNameOfficial"></span><br />
+Demonym: <span id="demonym"></span><br />
+
+<div data-role="collapsible-set">
+	<div data-role="collapsible" data-collapsed="false">
+		<h3>Warnings</h3>
+		<p>I'm the collapsibleset content for section 1. My content is initially visible.</p>
+	</div>
+		<div data-role="collapsible">
+		<h3></h3>
+	<p>I'm the collapsibleset content for section 2.</p>
+	</div>
+</div>
+
+</div>
+<script type="application/javascript">
+var data = {
+    "countryName": "Example",
+    "countryNameOfficial": "Example of Sample",
+    "demonym": "Examplish",
+    "certain": {
+        "britishBehaviour": {
+            "drugArrests": 0,
+            "totalArrests": 0,
+            "totalDeaths": 0,
+            "hospitalisations": 0,
+            "rape": 0,
+            "sexualAssult": 0,
+            "otherAssistance": 0,
+            "totalAssistance": 0
+        }
+    }
+};
+
+
+$("#countryName").text(data.countryName);
+$("#countryNameOfficial").text(data.countryNameOfficial);
+$("#demonym").text(data.demonym);
+</script>
+</body>
+</html>

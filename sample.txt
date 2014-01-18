@@ -11,6 +11,9 @@
 			"rape": 0,
 			"sexualAssult": 0,
 			"otherAssistance": 0,
-			"totalAssistance": 0
+			"travelAssistance": 0,
+			"totalAssistance": 0,
+			"passportLoss": 0,
+			"visitors2012": 1234,
 		}
 }
