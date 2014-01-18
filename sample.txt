@@ -1,19 +1,31 @@
 {
-	"countryName": "Example",
-	"countryNameOfficial": "ExampleofSample",
-	"demonym": "Examplish",
 	"certain": {
-		"britishBehaviour": {
-			"drugArrests": 0,
-			"totalArrests": 0,
-			"totalDeaths": 0,
-			"hospitalisations": 0,
-			"rape": 0,
-			"sexualAssult": 0,
-			"otherAssistance": 0,
-			"travelAssistance": 0,
-			"totalAssistance": 0,
-			"passportLoss": 0,
-			"visitors2012": 1234,
-		}
+		"countryName": 0,
+		"demonym": 0,
+		"drugArrests": 0,
+		"totalArrests": 0,
+		"totalDeaths": 0,
+		"hospitalisations": 0,
+		"rape": 0,
+		"sexualAssault": 0,
+		"therAssistance": 0,
+		"totalAssistance": 0,
+		"passportloss": 0,
+		"novisiters2012": 0
+	},
+	
+	"uncertain": {
+		"IPSVisitors": 0;
+		"drugArrestsPercent": 0,
+		"totalArrestsPercent": 0,
+		"totalDeathsPercent": 0,
+		"hospitalisationsPercent": 0,
+		"rapePercent": 0,
+		"sexualAssultPercent": 0,
+		"otherAssistancePercent": 0,
+		"totalAssistancePercent": 0,
+		"passportlossPercent": 0,
+		"LGBTRisk": "Low Risk",
+		"warnings": []
+	}
 }
