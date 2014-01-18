@@ -1,0 +1,16 @@
+{
+	"countryName": "Example",
+	"countryNameOfficial": "ExampleofSample",
+	"demonym": "Examplish",
+	"certain": {
+		"britishBehaviour": {
+			"drugArrests": 0,
+			"totalArrests": 0,
+			"totalDeaths": 0,
+			"hospitalisations": 0,
+			"rape": 0,
+			"sexualAssult": 0,
+			"otherAssistance": 0,
+			"totalAssistance": 0
+		}
+}
