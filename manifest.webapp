@@ -1,0 +1,14 @@
+{
+  "name": "TINATA",
+  "description": "FCO Hack Day Entry",
+  "launch_path": "/index.html",
+  "icons": {
+    "320": "/tinataSquare.png"
+  },
+  "version": "1",
+  "developer": {
+    "name": "OutGamed",
+    "url": "http://joereeve.me"
+  },
+  "default_locale": "en"
+}

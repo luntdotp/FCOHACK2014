@@ -1,0 +1,14 @@
+{
+  "name": "Poké Quiz",
+  "description": "*Early Beta* - Continuing to add extra Pokémon to the quiz! ------ In this app, you are challenged to correctly guess which Pokémon is which in an attempt to reach the High Score!",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/icon128.png"
+  },
+  "version": "3.7.5",
+  "developer": {
+    "name": "OutGamed",
+    "url": "http://joereeve.me"
+  },
+  "default_locale": "en"
+}

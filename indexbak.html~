@@ -1,0 +1,17 @@
+<html>
+<head>
+<link rel="stylesheet" src="jquerymobile.css">
+    <script src="jquery.js"></script>
+    <script src="jquerymobile.js"></script>
+</head>
+<body>
+<div data-role='page'>
+	<div data-role='header'>
+		<a>test</a>
+		</div>
+	<div data-role='content'>
+		<h1>hi</h1>
+	</div>
+</div>
+</body>
+</html>
