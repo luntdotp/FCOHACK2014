@@ -7,7 +7,11 @@
   <body>
     <div data-role='page'>
       <div data-role='header' id='header'>
+        <div class='ui-grid-a'>
+          <div class='ui-block-a'>
 		<img src='tinataWide.png' id='logo'/>
+          </div>
+          <div class='ui-block-b'>
             <form id='input'>
               <input id="pre-rendered-filterable" data-type="search">
             </form>
@@ -21,6 +25,7 @@
               <div class="ui-controlgroup-controls" id='options'>
               </div>
             </div>
+          </div>
         </div>
       </div>
       <div id='content' data-role='content'>
@@ -29,7 +34,6 @@
           <a class="ui-btn ui-corner-all" id='countryName'>Country Name: </a>
           <a class="ui-btn ui-corner-all" id='demonym'>Demonym: </a>
 	<a class="ui-btn ui-corner-all" id='topWarnings'>Warnings: </a>
-	<a class="ui-btn ui-corner-all" id='lgbtWarnings'>LGBT Warnings: </a>
         </div>
         
         <div data-role="collapsible-set">
@@ -56,12 +60,7 @@
   </body>
   <style>
     #input{
-	position:absolute;
-	width:45%;
-	display:inline-block;
-	left:50%;
-	top:0;
-	margin-top:0;
+      margin-right:5%;
     }
     #splash {
       position:absolute;
@@ -76,7 +75,7 @@
     }
 #tinataWide {
 width:90%;
-bottom:5%;
+bottom:15%;
 position:absolute;
 }
 #tinataSquare {
@@ -93,10 +92,9 @@ font-weight:bold;
 text-align:center;
 }
 #logo {
-display:inline-block;
-width:40%;
-margin-top:4%;
-margin-bottom:1%;
+width:90%;
+margin-left:1%;
+margin-top:10%;
 }
   </style>
   <script>
@@ -106,20 +104,19 @@ margin-bottom:1%;
     
     $(data).map(function(index){console.log(this);$('<a>').addClass('ui-screen-hidden country').appendTo($('#options')).text(this.name).attr({'data-role':'button','index':index}).click(function(){
       $('#options').hide();
-	$('#splash').animate({'opacity':0},500,function(){$(this).remove()})
-	if(data[$(this).attr('index')].warnings){$('#topWarnings').html('<strong>Arrests: </strong>'+data[$(this).attr('index')].warnings.arrests+' <strong> | Drug Arrests: </strong>'+data[$(this).attr('index')].warnings.drugArrests+' <strong> | Lost Passport: </strong>'+data[$(this).attr('index')].warnings.lostPassport)}
-	if(data[$(this).attr('index')].lgbtRights){$('#lgbtWarnings').html('<strong>LGBT Death Penalty: </strong>'+data[$(this).attr('index')].lgbtRights.deathPenalty+' <strong> | LGBT Inprisonment: </strong>'+data[$(this).attr('index')].lgbtRights.inprisonment+' <strong> | LGBT Persecution: </strong>'+data[$(this).attr('index')].lgbtRights.persecution)}
-      if(data[$(this).attr('index')].name){$('#countryName').html('<strong>Country Name: </strong>'+data[$(this).attr('index')].name)}
-      if(data[$(this).attr('index')].nameForCitizen){$('#demonym').html('<strong>Demonym: </strong>'+data[$(this).attr('index')].nameForCitizen)}
-      if(data[$(this).attr('index')].uk.drugArrests){$('<div>').html('<strong>Drug Arrests: </strong>'+data[$(this).attr('index')].uk.drugArrests).appendTo($('#info'))}
-      if(data[$(this).attr('index')].uk.hospitalizations){$('<div>').html('<strong>Hospitalizations: </strong>'+data[$(this).attr('index')].uk.hospitalizations).appendTo($('#info'))}
-      if(data[$(this).attr('index')].uk.lostPassport){$('<div>').html('<strong>Passport Losses/Theft: </strong>'+data[$(this).attr('index')].uk.lostPassport).appendTo($('#info'))}
-      if(data[$(this).attr('index')].uk.totalConsularAssistance){$('<div>').html('<strong>Total Consular Assistance Requested: </strong>'+data[$(this).attr('index')].uk.totalConsularAssistance).appendTo($('#info'))}
-      if(data[$(this).attr('index')].uk.rapes){$('<div>').html('<strong>Rape Cases: </strong>'+data[$(this).attr('index')].uk.rapes).appendTo($('#info'))}
-      if(data[$(this).attr('index')].uk.sexualAssault){$('<div>').html('<strong>Sexual Assault Cases: </strong>'+data[$(this).attr('index')].uk.sexualAssault).appendTo($('#info'))}
-      if(data[$(this).attr('index')].uk.deaths){$('<div>').html('<strong>Total Deaths: </strong>'+data[$(this).attr('index')].uk.deaths).appendTo($('#info'))}
-      if(data[$(this).attr('index')].uk.visitors){$('<div>').html('<strong>Number of Visitors in 2012: </strong>'+data[$(this).attr('index')].uk.visitors).appendTo($('#info'))}
-      if(data[$(this).attr('index')].nhsTravelAdviceUrl){$('<a>').attr('href',(data[$(this).attr('index')].nhsTravelAdviceUrl)).html('<strong>NHS Travel Advice</strong><br />').appendTo($('#warnings'))}
+$('#splash').animate({'opacity':0},500,function(){$(this).remove()})
+	$('#topWarnings').html('<strong>Arrests: </strong>'+data[$(this).attr('index')].warnings.arrests+' <strong> | Drug Arrests: </strong>'+data[$(this).attr('index')].warnings.drugArrests+' <strong> | Lost Passport: </strong>'+data[$(this).attr('index')].warnings.lostPassport)
+      $('#countryName').html('<strong>Country Name: </strong>'+data[$(this).attr('index')].name);
+      $('#demonym').html('<strong>Demonym: </strong>'+data[$(this).attr('index')].nameForCitizen);
+      $('<div>').html('<strong>Drug Arrests: </strong>'+data[$(this).attr('index')].uk.drugArrests).appendTo($('#info'));
+      $('<div>').html('<strong>Hospitalizations: </strong>'+data[$(this).attr('index')].uk.hospitalizations).appendTo($('#info'));
+      $('<div>').html('<strong>Passport Losses/Theft: </strong>'+data[$(this).attr('index')].uk.lostPassport).appendTo($('#info'));
+      $('<div>').html('<strong>Total Consular Assistance Requested: </strong>'+data[$(this).attr('index')].uk.totalConsularAssistance).appendTo($('#info'));
+      $('<div>').html('<strong>Rape Cases: </strong>'+data[$(this).attr('index')].uk.rapes).appendTo($('#info'));
+      $('<div>').html('<strong>Sexual Assault Cases: </strong>'+data[$(this).attr('index')].uk.sexualAssault).appendTo($('#info'));
+      $('<div>').html('<strong>Total Deaths: </strong>'+data[$(this).attr('index')].uk.deaths).appendTo($('#info'));
+      $('<div>').html('<strong>Number of Visitors in 2012: </strong>'+data[$(this).attr('index')].uk.visitors).appendTo($('#info'));
+      $('<a>').attr('href',(data[$(this).attr('index')].nhsTravelAdviceUrl)).html('<strong>NHS Travel Advice</strong><br />').appendTo($('#warnings'));
       $('<a>').attr('href',(data[$(this).attr('index')].fcoTravelAdviceUrl)).html('<strong>FCO Travel Advice</strong>').appendTo($('#warnings'));
     })});
     $('#input').focusin(function(){$('#options').show()});
